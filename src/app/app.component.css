@@ -158,8 +158,10 @@ svg#rocket-smoke {
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+  color: #fff;
   text-decoration: none;
+  margin-left:0.5rem;
+  cursor: pointer;
 }
 
 a:hover {
