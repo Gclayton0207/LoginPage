@@ -18,6 +18,7 @@ import { AddcontactComponent } from './contact/addcontact/addcontact.component';
     ContactComponent,
     StatusComponent,
     AddcontactComponent
+
   ],
   imports: [
     BrowserModule,
