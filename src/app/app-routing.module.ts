@@ -13,8 +13,18 @@ const routes: Routes = [
     component: ContactComponent,
     children: [
       { path: 'add', component: AddcontactComponent },
-      { path: 'edit/:id', component: AddcontactComponent }
+      { path: 'edit/:id', component: AddcontactComponent },
     ],
+  },
+  {
+    path: 'access',
+    loadChildren: () =>
+      import('./access/access.module').then((res) => res.AccessModule),
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./login/login.component').then((res) => res.LoginComponent),
   },
 ];
 
