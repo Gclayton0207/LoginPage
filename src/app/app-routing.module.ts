@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { AddcontactComponent } from './contact/addcontact/addcontact.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,6 +27,9 @@ const routes: Routes = [
     loadComponent: () =>
       import('./login/login.component').then((res) => res.LoginComponent),
   },
+  {
+    path: '**',component:StatusComponent
+  }
 ];
 
 @NgModule({
