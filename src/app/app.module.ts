@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
 import { AddcontactComponent } from './contact/addcontact/addcontact.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AddcontactComponent } from './contact/addcontact/addcontact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
