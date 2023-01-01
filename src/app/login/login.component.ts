@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/Material-Module';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../Service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,18 +13,24 @@ import { UserService } from '../Service/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private service: UserService) {}
+  constructor(private service: UserService, private route: Router) {}
 
-  ngOnInit(): void {}
-  respdata:any;
+  ngOnInit(): void {
+    localStorage.clear();
+  }
+  respdata: any;
   ProceedLogin(logindata: any) {
     if (logindata.valid) {
       this.service.ProceedLogin(logindata.value).subscribe((item) => {
-        this.respdata=item
-        console.log(logindata.value)
+        this.respdata = item;
+        console.log(logindata.value);
         console.log(this.respdata);
-
-
+        if (this.respdata != null) {
+          localStorage.setItem('token',this.respdata.token);
+          this.route.navigate(['home']);
+        } else {
+          alert('Usuario ou senha invalidos');
+        }
       });
     }
   }
