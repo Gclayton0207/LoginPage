@@ -9,13 +9,13 @@ import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  { path: 'about', component: AboutComponent },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
   {
-    path: 'contact',
+    path: 'contact',canActivate: [AuthGuard],
     component: ContactComponent,
     children: [
-      { path: 'add', component: AddcontactComponent },
-      { path: 'edit/:id', component: AddcontactComponent },
+      { path: 'add', component: AddcontactComponent, canActivate: [AuthGuard] },
+      { path: 'edit/:id', component: AddcontactComponent, canActivate: [AuthGuard] },
     ],
   },
   {
