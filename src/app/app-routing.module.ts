@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AddcontactComponent } from './contact/addcontact/addcontact.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthGuard } from './Guard/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'about', component: AboutComponent },
   {
     path: 'contact',
