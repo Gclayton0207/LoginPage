@@ -6,10 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   constructor(private http: HttpClient) {}
+  baseUrl = 'http://localhost:3000';
 
   ProceedLogin(inputdata: any) {
     console.log(inputdata);
-    return this.http.post('http://localhost:3000/auth/login', inputdata);
+    return this.http.post(`${this.baseUrl}/auth/login`, inputdata);
   }
 
   IsLooged() {
@@ -20,5 +21,10 @@ export class UserService {
     return localStorage.getItem('token') != null
       ? localStorage.getItem('token')
       : '';
+  }
+
+  Registration(inputdata: any) {
+    return this.http.post(`${this.baseUrl}/auth/register`, inputdata);
+
   }
 }
