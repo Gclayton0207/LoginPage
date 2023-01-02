@@ -4,6 +4,7 @@ import { MaterialModule } from 'src/Material-Module';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../Service/user.service';
 import { Router } from '@angular/router';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-login',
@@ -21,20 +22,24 @@ export class LoginComponent implements OnInit {
   respdata: any;
   ProceedLogin(logindata: any) {
     if (logindata.valid) {
-      this.service.ProceedLogin(logindata.value).subscribe((item) => {
-        this.respdata = item;
-        console.log(logindata.value);
-        console.log(this.respdata);
-        if (this.respdata != null) {
-          localStorage.setItem('token',this.respdata.token);
-          this.route.navigate(['home']);
-        } else {
-          alert('Usuario ou senha invalidos');
+      this.service.ProceedLogin(logindata.value).subscribe(
+        (item) => {
+          this.respdata = item;
+          console.log(logindata.value);
+          console.log(this.respdata);
+          if (this.respdata != null) {
+            localStorage.setItem('token', this.respdata.token);
+            this.route.navigate(['home']);
+          }
+        },
+        (err) => {
+          console.log(err);
+          alertify.error('Usuario ou senha invalidos');
         }
-      });
+      );
     }
   }
-  RedirectRegister(){
+  RedirectRegister() {
     this.route.navigate(['access/register']);
   }
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as alertify from 'alertifyjs';
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +24,11 @@ export class UserService {
       : '';
   }
 
-  Registration(inputdata: any) {
+  Register(inputdata: any) {
+ 
     return this.http.post(`${this.baseUrl}/auth/register`, inputdata);
 
   }
+
+
 }

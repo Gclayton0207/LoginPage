@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/Service/user.service';
+import * as alertify from 'alertifyjs';
 
 @Component({
   selector: 'app-register',
@@ -28,11 +29,15 @@ export class RegisterComponent implements OnInit {
 
   saveUser() {
     if (this.reactiveForm.valid) {
-      this.service.Registration(this.reactiveForm.value).subscribe((item) => {
+      this.service.Register(this.reactiveForm.value).subscribe(item => {
         this.respdata = item;
-        
-        this.RedirectLogin()
-
+        if(this.respdata.status == 201){
+          alertify.success("Registrado com sucesso, redirecionando");
+          this.RedirectLogin();
+        }
+      }, (err) => {
+        console.log(err.error);
+        alertify.error(`${err.error.msg}`)
       });
     }
   }
