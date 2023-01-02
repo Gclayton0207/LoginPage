@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as alertify from 'alertifyjs';
+
 
 @Injectable({
   providedIn: 'root',
@@ -25,9 +25,19 @@ export class UserService {
   }
 
   Register(inputdata: any) {
- 
+
     return this.http.post(`${this.baseUrl}/auth/register`, inputdata);
 
+  }
+
+  getUser(id:string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.GetToken()}`
+    });
+
+  const requestOptions = { headers: headers };
+    return this.http.get(`${this.baseUrl}/user/${id}`, requestOptions)
   }
 
 
