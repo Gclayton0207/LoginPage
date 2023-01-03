@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { AddcontactComponent } from './contact/addcontact/addcontact.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthGuard } from './Guard/auth.guard';
 import { HomeComponent } from './home/home.component';
@@ -12,11 +11,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
   {
     path: 'contact',canActivate: [AuthGuard],
-    component: ContactComponent,
-    children: [
-      { path: 'add', component: AddcontactComponent, canActivate: [AuthGuard] },
-      { path: 'edit/:id', component: AddcontactComponent, canActivate: [AuthGuard] },
-    ],
+    component: ContactComponent
   },
   {
     path: 'access',

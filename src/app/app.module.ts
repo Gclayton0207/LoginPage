@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
-import { AddcontactComponent } from './contact/addcontact/addcontact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { MaterialModule } from 'src/Material-Module';
@@ -19,7 +18,7 @@ import { MaterialModule } from 'src/Material-Module';
     AboutComponent,
     ContactComponent,
     StatusComponent,
-    AddcontactComponent
+
 
   ],
   imports: [
