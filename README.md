@@ -1,27 +1,53 @@
 # LoginPage
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+  ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+  ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+  ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Resumo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Projeto criado para simular uma pagina de login com acesso por autenticação e cadastro.
 
-## Build
+## Executar o projeto localmente
+ 
+### Requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[Git](https://git-scm.com/)
 
-## Running unit tests
+[Angular](https://angular.io/guide/setup-local)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[MongoDB Atlas](https://account.mongodb.com/account/login)
 
-## Running end-to-end tests
+[API node JWT](https://github.com/Gclayton0207/API-NODE-JWT)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Editor de código de sua preferência
 
-## Further help
+### Instalação 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Inicie a api Node JWT
+
+Utilize o Git Clone no repositório em uma pasta de sua escolha
+
+```
+$ git clone https://github.com/Gclayton0207/LoginPage.git
+```
+Navegue até a pasta do projeto utilizando comando cd
+
+```
+$ cd LoginPage
+```
+Execute o comando a seguir no terminal para instalar as dependências
+
+```
+$ npm install
+```
+Execute o comando a seguir no terminal para iniciar o servidor
+
+```
+$ ng serve
+```
+
