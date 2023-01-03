@@ -50,4 +50,7 @@ Execute o comando a seguir no terminal para iniciar o servidor
 ```
 $ ng serve
 ```
+## Desenvolvedor
+
+[Giovanni Clayton](https://www.linkedin.com/in/giovanni-clayton/).
 
