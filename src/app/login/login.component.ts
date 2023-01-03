@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
       this.service.ProceedLogin(logindata.value).subscribe(
         (item) => {
           this.respdata = item;
-          console.log(logindata.value);
-          console.log(this.respdata);
           if (this.respdata != null) {
             localStorage.setItem('token', this.respdata.token);
             localStorage.setItem('id', this.respdata.id);
