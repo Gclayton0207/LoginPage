@@ -1,11 +1,11 @@
-mat-card-title{
-  font-weight:bold;
+mat-card-title {
+  font-weight: bold;
   margin: 1rem;
   text-align: center;
 }
-.ng-star-inserted{
+.ng-star-inserted {
   width: 100%;
 }
-.btn-register{
+.btn-register {
   margin: 0.5em;
 }

@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -25,20 +24,16 @@ export class UserService {
   }
 
   Register(inputdata: any) {
-
     return this.http.post(`${this.baseUrl}/auth/register`, inputdata);
-
   }
 
-  getUser(id:string) {
+  getUser(id: string) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.GetToken()}`
+      Authorization: `Bearer ${this.GetToken()}`,
     });
 
-  const requestOptions = { headers: headers };
-    return this.http.get(`${this.baseUrl}/user/${id}`, requestOptions)
+    const requestOptions = { headers: headers };
+    return this.http.get(`${this.baseUrl}/user/${id}`, requestOptions);
   }
-
-
 }

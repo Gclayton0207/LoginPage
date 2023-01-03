@@ -1,23 +1,42 @@
 <mat-card>
   <mat-card-title>Registrar</mat-card-title>
   <mat-card-content>
-    <form class="example-form" [formGroup]="reactiveForm" (ngSubmit)="saveUser()">
+    <form
+      class="example-form"
+      [formGroup]="reactiveForm"
+      (ngSubmit)="saveUser()"
+    >
       <mat-form-field class="example-full-width">
         <mat-label>Nome </mat-label>
         <input matInput placeholder="Nome" formControlName="name" />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Email </mat-label>
-        <input type="email" matInput placeholder="Email" formControlName="email" />
+        <input
+          type="email"
+          matInput
+          placeholder="Email"
+          formControlName="email"
+        />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Senha </mat-label>
-        <input matInput placeholder="Senha" type="password" formControlName="password" />
+        <input
+          matInput
+          placeholder="Senha"
+          type="password"
+          formControlName="password"
+        />
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Confirmar Senha </mat-label>
-        <input matInput placeholder="Confirmar Senha" type="password"  formControlName="confirmpassword"/>
+        <input
+          matInput
+          placeholder="Confirmar Senha"
+          type="password"
+          formControlName="confirmpassword"
+        />
       </mat-form-field>
       <div>
         <button mat-raised-button type="submit" color="primary">

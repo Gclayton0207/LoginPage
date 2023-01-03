@@ -7,11 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { StatusComponent } from './status/status.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
   {
-    path: 'contact',canActivate: [AuthGuard],
-    component: ContactComponent
+    path: 'contact',
+    canActivate: [AuthGuard],
+    component: ContactComponent,
   },
   {
     path: 'access',
@@ -24,8 +25,9 @@ const routes: Routes = [
       import('./login/login.component').then((res) => res.LoginComponent),
   },
   {
-    path: '**',component:StatusComponent
-  }
+    path: '**',
+    component: StatusComponent,
+  },
 ];
 
 @NgModule({
